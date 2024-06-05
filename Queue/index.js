@@ -44,6 +44,8 @@ class Queue {
   }
 }
 
+// since it is an array ,the time complexity will be linear 
+
 const queue = new Queue();
 
 console.log(queue.isEmpty());
