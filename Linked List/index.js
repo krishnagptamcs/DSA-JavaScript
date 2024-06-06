@@ -41,10 +41,40 @@ class LinkedList {
 
     if (this.isEmpty()) {
       this.head = node;
-    }else{
-        node.next = this.head;
-        this.head = node
+    } else {
+      node.next = this.head;
+      this.head = node;
     }
     this.size++;
   }
+
+  print() {
+    if (this.isEmpty()) {
+      console.log("list is empty");
+    } else {
+      let curr = this.head;
+      let listValue = "";
+      while (curr) {
+        listValue += `${curr.value} `;
+        curr = curr.next;
+      }
+
+      console.log(listValue);
+    }
+  }
 }
+
+const list = new LinkedList();
+
+
+console.log("is empty", list.isEmpty());
+console.log('list size', list.getSize());
+
+list.print();
+
+list.prepend(10);
+list.print();
+
+list.prepend(25);
+list.prepend(35);
+list.print();
