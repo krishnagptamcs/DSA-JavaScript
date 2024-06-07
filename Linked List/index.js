@@ -54,8 +54,8 @@ class LinkedList {
   // this method check both if it is empty and not empty
   // since element is adding in the ending position  so it havw to traverse all the element
   //timecomplexity will be O(n) ,,linear
-  append() {
-    const node = new Node();
+  append(value) {
+    const node = new Node(value);
 
     if (this.isEmpty()) {
       this.head = node;
@@ -69,6 +69,27 @@ class LinkedList {
       prev.next = node;
     }
     this.size++;
+  }
+
+  // to insert the node on the given index
+  insert(value, index) {
+    if (index < 0 || index > this.size) {
+      return console.log("either list is empty or the indeex is not valid ");
+    }
+
+    // if the index is 0 then list is empty
+    if (index === 0) {
+      this.prepend(value);
+    } else {
+      const node = new Node(value);
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      node.next = prev.next;
+      prev.next = node;
+      this.size++;
+    }
   }
 
   print() {
@@ -94,9 +115,12 @@ console.log("list size", list.getSize());
 
 list.print();
 
-list.prepend(10);
+list.append(10);
 list.print();
 
-list.prepend(25);
-list.prepend(35);
+list.append(25);
+list.append(35);
+list.print();
+
+list.insert(80,3);
 list.print();
