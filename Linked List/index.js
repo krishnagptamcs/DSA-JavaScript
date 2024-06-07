@@ -35,6 +35,8 @@ class LinkedList {
 
   // to initalise the value in node
   // this code , inserting the node in the start when the list is empty
+  // since element is adding in the starting position
+  //timecomplexity will be O(1) ,,constant
   prepend(value) {
     //calling an node class which is define above & passing the value
     const node = new Node(value);
@@ -44,6 +46,27 @@ class LinkedList {
     } else {
       node.next = this.head;
       this.head = node;
+    }
+    this.size++;
+  }
+
+  // this method add the node in the end
+  // this method check both if it is empty and not empty
+  // since element is adding in the ending position  so it havw to traverse all the element
+  //timecomplexity will be O(n) ,,linear
+  append() {
+    const node = new Node();
+
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      // tracking the previous also
+      let prev = this.head;
+      while (prev.next) {
+        prev = prev.next;
+      }
+      // assing the node in the last position
+      prev.next = node;
     }
     this.size++;
   }
@@ -66,9 +89,8 @@ class LinkedList {
 
 const list = new LinkedList();
 
-
 console.log("is empty", list.isEmpty());
-console.log('list size', list.getSize());
+console.log("list size", list.getSize());
 
 list.print();
 
