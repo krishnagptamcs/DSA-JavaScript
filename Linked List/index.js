@@ -154,6 +154,26 @@ class LinkedList {
     }
   }
 
+  //To search the given value in list
+  search(value) {
+    // check the list is not empty
+    if (this.isEmpty()) {
+      return -1;
+    }
+
+    let i = 0;
+    let curr = this.head;
+
+    // incremenring curr postition
+    while (curr) {
+      if (curr.value === value) {
+        return i;
+      }
+      curr = curr.next;
+      i++;
+    }
+    return -1;
+  }
   print() {
     if (this.isEmpty()) {
       console.log("list is empty");
