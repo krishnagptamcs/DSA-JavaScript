@@ -37,6 +37,8 @@ class LinkedList {
   // this code , inserting the node in the start when the list is empty
   // since element is adding in the starting position
   //timecomplexity will be O(1) ,,constant
+
+  //To add the node from start
   prepend(value) {
     //calling an node class which is define above & passing the value
     const node = new Node(value);
@@ -54,6 +56,8 @@ class LinkedList {
   // this method check both if it is empty and not empty
   // since element is adding in the ending position  so it havw to traverse all the element
   //timecomplexity will be O(n) ,,linear
+
+  //To add the node from the end
   append(value) {
     const node = new Node(value);
 
@@ -71,7 +75,7 @@ class LinkedList {
     this.size++;
   }
 
-  // to insert the node on the given index
+  //To insert a node on a given index
   insert(value, index) {
     if (index < 0 || index > this.size) {
       return console.log("either list is empty or the indeex is not valid ");
@@ -90,6 +94,33 @@ class LinkedList {
       prev.next = node;
       this.size++;
     }
+  }
+
+  //To remove a node of a given index
+  removeNode(index) {
+    // when the given is not negative && not greater than size of the list
+    if (index < 0 || index >= this.size) {
+      return "The given node is not justified";
+    }
+    // If the given index is 0
+    let removeNode;
+    if (index === 0) {
+      // taking a refrence ,
+      //first assign the value of head to refrence
+      //now move the head to next one
+      removeNode = this.head;
+      this.head = this.head.next;
+    } else {
+      // when the given index is b/w the list
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      removeNode = prev.next;
+      prev.next = removeNode.next;
+    }
+    this.size--;
+    return removeNode.value;
   }
 
   print() {
@@ -122,5 +153,5 @@ list.append(25);
 list.append(35);
 list.print();
 
-list.insert(80,3);
+list.insert(80, 3);
 list.print();
