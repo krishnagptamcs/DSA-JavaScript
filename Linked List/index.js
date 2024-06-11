@@ -123,6 +123,37 @@ class LinkedList {
     return removeNode.value;
   }
 
+  //To remove a node of the given value
+  removeValue(value) {
+    if (this.isEmpty()) {
+      console.log("Sorry no node can be remove , empty list");
+    }
+    if (this.head.value === value) {
+      // When the given value is head of the list
+      this.head = this.head.next;
+      this.size--;
+      return value;
+    } else {
+      let prev = this.head;
+      while (prev.next && prev.next.value !== value) {
+        prev = prev.next;
+      }
+
+      let removeNode;
+
+      if (prev.next) {
+        // if the previous node is not null
+        removeNode = prev.next;
+        prev.next = removeNode.next;
+        this.size--;
+        return value;
+      } else {
+        // when the previous node is null then it means this is at its last position
+        return null;
+      }
+    }
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log("list is empty");
