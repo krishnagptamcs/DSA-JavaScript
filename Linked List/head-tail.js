@@ -69,7 +69,7 @@ class LinkedList {
 
   //To remove value/node from Front
   //on(1)
-  rmoveFromFront() {
+  removeFromFront() {
     if (this.isEmpty()) {
       return null;
     }
