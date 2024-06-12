@@ -107,15 +107,16 @@ class LinkedList {
   }
 }
 
+module.exports = LinkedList;
 
-const list = new LinkedList();
+// const list = new LinkedList();
 
-console.log(list.isEmpty());
-console.log(list.size);
+// console.log(list.isEmpty());
+// console.log(list.size);
 
-list.append(1); 
-list.append(2); 
-list.append(3);
-list.prepend(10); 
+// list.append(1);
+// list.append(2);
+// list.append(3);
+// list.prepend(10);
 
-list.print();
+// list.print();
