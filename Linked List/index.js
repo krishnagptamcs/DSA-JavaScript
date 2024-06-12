@@ -164,7 +164,7 @@ class LinkedList {
     let i = 0;
     let curr = this.head;
 
-    // incremenring curr postition
+    // incrementing curr postition
     while (curr) {
       if (curr.value === value) {
         return i;
@@ -174,6 +174,22 @@ class LinkedList {
     }
     return -1;
   }
+
+  //To reverse a lined-list
+  reverse() {
+    let prev = null;
+    let curr = this.head;
+
+    while (curr) {
+      let next = curr.prev;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+
+    this.head = prev;
+  }
+
   print() {
     if (this.isEmpty()) {
       console.log("list is empty");
