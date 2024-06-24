@@ -1,0 +1,69 @@
+//Terminology 
+
+//Tree data structure is a specialized data structure to store data in hierarchical manner. It is used to organize and store data in the computer to be used more effectively. It consists of a central node, structural nodes, and sub-nodes, which are connected via edges. We can also say that tree data structure has roots, branches, and leaves connected.
+
+//Tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search. It is a collection of nodes that are connected by edges and has a hierarchical relationship between the nodes. 
+
+//Non-linear Datasturcture-->The data in a tree are not stored in a sequential manner i.e., they are not stored linearly. Instead, they are arranged on multiple levels or we can say it is a hierarchical structure. For this reason, the tree is considered to be a non-linear data structure.
+
+Basic's terminology
+
+Parent Node-> It is the predecessor of a node 
+
+Child Node-> It is the immediate successr of a node 
+
+Siblings-> Node with same parents are called siblings
+
+Root Node-> It is the topmost node of a tree , which does not have any paraent node , the tree is originated 
+
+Leaf Node-> The node which do not have any child node ,
+
+Path-> Sequence of node edges from one to another
+
+Degree->  The maxinum number of child of a node 
+
+Representation
+
+A tree can be represented using a collection of nodes. Each of the nodes can be represented with the help of class or structs. Below is the representation of Node in different languages:
+
+Importance of tree Datasturcture
+1)  One reason to use trees might be because you want to store information that naturally forms a hierarchy. For example, the file system on a computer
+
+2) Trees (with some ordering e.g., BST) provide moderate access/search (quicker than Linked List and slower than arrays). 
+
+3)Trees provide moderate insertion/deletion (quicker than Arrays and slower than Unordered Linked Lists). 
+
+4) Like Linked Lists and unlike Arrays, Trees don’t have an upper limit on the number of nodes as nodes are linked using pointers.
+
+
+/////------ Binary Search Tree -------//////
+
+//Binary Tree--> It is tree datastructue , in which the topmost node have two children. they are reffred as left child and right child
+
+//Binary search tree-->A binary tree  Having a following two properties 
+//a) The value of each left node must be smaller than the parent node
+
+//b) The value of each right node must be greater than parent node 
+
+//c) Each node having atmost two children
+
+//Binary Seacrh tree operation
+
+//Insertion- To add a node to the tree 
+//Seacrh - To find a node given its value
+//DFS & BFS- Depth first Search & Breadth First Search to visit all node in the tree
+//Deletion - to remove a node given its value
+
+Application
+
+DataBase system , to search and index large scattered reports 
+Autocomplete and spell check
+File system
+Phone book
+Compressing data
+
+
+
+
+
+
