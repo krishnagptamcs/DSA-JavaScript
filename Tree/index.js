@@ -72,6 +72,33 @@ class BinarySearchTree {
       }
     }
   }
+
+  //read Node value first
+  preOrder() {
+    if (root) {
+      console.log(root.value);
+      this.preOrder(root.left);
+      this.preOrder(root.right);
+    }
+  }
+
+  //read Node value in the middle
+  inOrder() {
+    if (root) {
+      this.inOrder(root.left);
+      console.log(root.value);
+      this.inOrder(root.right);
+    }
+  }
+
+  //read the Node value in the end
+  postOrder() {
+    if (root) {
+      this.postOrder(root.left);
+      this.postOrder(root.right);
+      console.log(root.value);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
