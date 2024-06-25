@@ -117,6 +117,23 @@ class BinarySearchTree {
       }
     }
   }
+
+  //To find Min  & Max logic method
+  min(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      this.min(root.left);
+    }
+  }
+
+  max(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      this.max(root.right);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
