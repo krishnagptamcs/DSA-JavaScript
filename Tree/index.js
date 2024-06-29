@@ -119,6 +119,7 @@ class BinarySearchTree {
   }
 
   //To find Min  & Max logic method
+  //Min Method
   min(root) {
     if (!root.left) {
       return root.value;
@@ -127,12 +128,59 @@ class BinarySearchTree {
     }
   }
 
+  //Max Method
   max(root) {
     if (!root.right) {
       return root.value;
     } else {
       this.max(root.right);
     }
+  }
+
+  //To delete a node
+
+  delete(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  deleteNode(root, value) {
+    //Checking the root is not empty
+    if (root === null) {
+      return root; // returning root for recursion
+    }
+
+    //Comparing the value with root value
+    if (value < root.value) {
+      // Checking first with left node
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      //in this case , the passed value and root value is matched
+      //so checking the the root.value/node is a leaf node
+      //not having any children
+      if (!root.left && !root.right) {
+        return null;
+      }
+
+      //checking if the node not having any
+      //left sub-node
+      //right sub-node
+      if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+
+      //if both the check scenario fails ,
+      //the root hase two child node
+      //now , copy the order successor to the node & delete in order successor
+      //order-successor of a node , is minimum value in right sub-tree
+
+      root.value = this.min(root.right);
+      root.right = this.deleteNode(root.right, root.value);
+    }
+    return root;
   }
 }
 
