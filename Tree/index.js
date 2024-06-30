@@ -190,8 +190,12 @@ console.log(bst.isEmpty());
 
 bst.insert(12);
 bst.insert(8);
-bst.insert(10);
+bst.insert(7);
+bst.insert(3);
 
-console.log(bst.search(bst.root, 8));
-console.log(bst.search(bst.root, 12));
-console.log(bst.search(bst.root, 13));
+// console.log(bst.search(bst.root, 8));
+// console.log(bst.search(bst.root, 12));
+// console.log(bst.search(bst.root, 13));
+
+bst.levelOrder();
+

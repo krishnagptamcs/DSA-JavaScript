@@ -1,0 +1,22 @@
+ Defenation:
+
+ A graph is a non-linear ds that consisit of a finit number of a vertices (aslo called as node) connected by edges
+
+ tree are specific type a graph data structure 
+
+ Types:
+ Vertices: set of circle , A,B,C 
+ Edges: the line connecting A-B-C
+
+ Directed Graps:- a graph in which edges have direction
+
+ Undirected Graph- a graph in which edges do not have any direction
+
+Uses
+Google maps
+Cites are represetend as vertices  ,
+Roads are represetend as a edges to help build a navigation system
+
+Social Media sites
+User are represetend as a vertices and links b/w connection are edges 
+fb, insta , linked in, all show mutual connection ,post suggestion, and other recomendation
