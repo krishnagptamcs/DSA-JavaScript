@@ -20,3 +20,40 @@ Roads are represetend as a edges to help build a navigation system
 Social Media sites
 User are represetend as a vertices and links b/w connection are edges 
 fb, insta , linked in, all show mutual connection ,post suggestion, and other recomendation
+
+
+Representation
+
+Adjency Matrix: 
+An adjency matric is a 2d array of size VxV where V is the number of vertices in the graph
+Each row and coloum represent a vertex 
+if any valye of any element say , matrix[i][j] is 1, it represent that there is an edge connecting vertex i and vertex j
+Adjency List
+
+
+
+//The graph represent as 2d array in the javascript .
+
+//Adjecny matrix of a graph
+const matrix = [
+  [0, 1, 0],
+  [1, 0, 1],
+  [0, 1, 0],
+];
+
+console.log(matrix[0][1]); // the 0 postion matrix , and inside this the 1st postion element
+
+//Adjency List of a graph
+//vertices are stored in a map like data structure and every vertex stores a list of its adjecent vertices
+
+adjacencyList = {
+  A: ["B"],
+  B: ["A", "C"],
+  C: ["B"],
+};
+
+console.log(adjacencyList["C"]); //--> B
+
+//A--->B
+//B--->A,C
+//C--->B
